@@ -27,9 +27,15 @@ jobs:
         run: |
           npm install
           npm install got download tough-cookie
-      - name: ' 运行 【企鹅阅读一】'
+      - name: ' 运行 【企鹅阅读1】'
         if: env.COOKIE_QQYD
         run: |
           node qqyd.js
         env:
           COOKIE_QQYD: ${{ secrets.COOKIE_QQYD }}
+      - name: ' 运行 【企鹅阅读2】'
+        if: env.COOKIE_QQYD
+        run: |
+          node qqyd.js
+        env:
+          COOKIE_QQYD: ${{ secrets.COOKIE_QQYD2 }}
